@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>web</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="test.js"></script>
+</head>
+<body>
+
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+            <div>
+                <div class="form-group">
+                    <label for="comment">参与人员【例如张三18888888888-李四18888888888-……】</label>
+                    <input type="file" onchange="upload(this)" id="User"/>
+<!--                    <textarea class="form-control" rows="5" id="User"></textarea>-->
+                </div>
+                <div>
+                    抽出几个：<input type="number" name="successUserNumber" id="randomNumber">
+                    <button id="start" onclick="startRun()">开始</button>
+                    <button onclick="stop()">停止</button>
+                    <button onclick="location.reload()">重新</button>
+                </div>
+            </div>
+            <center>
+                <h1 id="randomUser"></h1>
+                <h1 id="successUser"></h1>
+            </center>
+        </div>
+        <div class="col-sm-4">
+            <div class="parent">
+                <div class="child">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>参与人员</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tableuser">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+<style type="text/css">
+    .parent {
+        position: relative;
+        height: 150%;
+    / / 高度根据需求自行设定
+    }
+
+    .child {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    / / left, top, right, bottom都为0，充满真个页面 overflow-y: auto;
+        overflow-x: hidden;
+    / / 设置Y轴出现滚动条，X轴隐藏
+    }
+</style>
